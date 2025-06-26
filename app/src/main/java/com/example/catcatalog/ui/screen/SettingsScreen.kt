@@ -17,9 +17,12 @@ fun SettingsScreen() {
     var showDialog by remember { mutableStateOf(false) }
 
     Column(
-        modifier = Modifier.fillMaxSize().padding(16.dp),
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(16.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
+        Spacer(modifier = Modifier.height(64.dp))
         Text(
             text = "Settings",
             style = MaterialTheme.typography.titleLarge

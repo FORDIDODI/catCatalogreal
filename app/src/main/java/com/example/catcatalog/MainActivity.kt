@@ -32,6 +32,10 @@ import androidx.compose.material.icons.filled.Bookmark
 import androidx.compose.material.icons.filled.Settings
 import androidx.navigation.compose.rememberNavController
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.TextButton
+import androidx.compose.material3.MaterialTheme
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.sp
 
 class MainActivity : ComponentActivity() {
     @OptIn(ExperimentalMaterial3Api::class)
@@ -65,7 +69,21 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     topBar = {
                         TopAppBar(
-                            title = { Text("Cat Catalog") },
+                            title = {
+                                TextButton(onClick = {
+                                    navController.navigate("list") {
+                                        popUpTo(0) { inclusive = false }
+                                        launchSingleTop = true
+                                    }
+                                }) {
+                                    Text(
+                                        "Cat Catalog",
+                                        color = androidx.compose.ui.graphics.Color.White,
+                                        fontSize = 22.sp,
+                                        fontWeight = FontWeight.Bold
+                                    )
+                                }
+                            },
                             actions = {
                                 IconButton(onClick = { navController.navigate("about") }) {
                                     Icon(Icons.Filled.Info, contentDescription = "About")
