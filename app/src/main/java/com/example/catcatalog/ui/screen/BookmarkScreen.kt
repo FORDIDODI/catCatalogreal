@@ -18,7 +18,9 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
+import androidx.compose.ui.tooling.preview.Preview
 
+@Preview
 @OptIn(ExperimentalGlideComposeApi::class)
 @Composable
 fun BookmarkScreen() {
